@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{author.name}}{% endblock %}
+
+
+{% block body %}
+<h1>{{author.name}}</h1>
+
+  <h2>Posts</h2>
+  <ul>
+  {% for post in posts %}
+    <li><a href="post/{{ post.id }}">{{ post.title }}</a></li>
+  {% else %}
+    <li>No posts have been found for this author.</li>
+  {% endfor %}
+  </ul>
+{% endblock %}

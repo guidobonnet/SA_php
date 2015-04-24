@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block body %}
+  <h1>Home</h1>
+
+  <h2>Posts</h2>
+  <ul>
+  {% for post in posts %}
+    <li><a href="post/{{ post.id }}">{{ post.title }}</a></li>
+  {% else %}
+    <li>No posts have been found.</li>
+  {% endfor %}
+  </ul>
+  <a href="post/add">Add Post</a>
+  
+  <h2>Authors</h2>
+  <ul>
+  {% for author in authors %}
+    <li><a href="author/{{ author.id }}">{{ author.name }}</a></li>
+  {% else %}
+    <li>No author have been found.</li>
+  {% endfor %}
+  </ul>
+  <a href="author/add">Add Author</a>
+{% endblock %}
